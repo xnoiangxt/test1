@@ -1,0 +1,59 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Hugo Hero Theme"
+themesDir = "themes"
+theme = "hugo-hero-theme"
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.55.0"
+    
+[params]
+  google_analytics_id=""
+
+  [params.homepage_meta_tags]
+    meta_description = "Hero is a multipurpose Hugo theme with fullscreen hero images and page sections. It contains content types for a business or portfolio site."
+    meta_og_title = "Hugo Hero Theme"
+    meta_og_type = "website"
+    meta_og_url = "https://hugo-hero.netlify.app"
+    meta_og_image = "https://raw.githubusercontent.com/JugglerX/hugo-hero-theme/master/images/tn.png"
+    meta_og_description = "Hero is a multipurpose Hugo theme with fullscreen hero images and page sections. It contains content types for a business or portfolio site."
+    meta_twitter_card = "summary"
+    meta_twitter_site = "@zerostaticio"
+    meta_twitter_creator = "@zerostaticio"
+
+# Sort by weight below, else menus don't jive on each page:
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 11
+
+[[menu.main]]
+    name = "Alpha2022"
+    url = "/alpha2022/"
+    weight = 21
+
+[[menu.main]]
+	name = "FAQs"
+	url = "/faqs/"
+    weight = 31
+
+[[menu.main]]
+	name = "Reviews"
+	url = "/reviews/"
+    weight = 41
+
+[[menu.main]]
+    name = "Share"
+    url = "/share/"
+    weight = 51
+
+[[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 61
+
+[permalinks]
+  post = "/:year/:month/:day/:slug/"
+  pages = "/:filename/"

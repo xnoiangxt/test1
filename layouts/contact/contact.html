@@ -1,0 +1,58 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-contact{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "main" }}
+<div class="intro intro-small">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>{{ .Title }}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-8">
+      {{ .Content }}
+      <li>Subscribe to our news letter, take the <a href="../alpha2022/#mc_embed_signup">Alpha 2022 pre-screen survey</a>  and share them and this site.</li>
+
+
+      <ul>
+        <li><strong>Phone: </strong>{{ .Site.Data.contact.phone }}</li>
+        <li><strong>Email: </strong><a href="mailto:{{ .Site.Data.contact.email }}">
+            {{ .Site.Data.contact.email }}</a></li>
+        {{ if .Site.Data.contact.address }}
+        <li style="white-space: pre-wrap;"><strong>Address: </strong><br>{{ .Site.Data.contact.address }}</li>
+        {{ end }}
+
+        <h4 class="mt-4">Hugo Credits</h4>
+	<li>Using (modified) Hugo Hero theme by <a href="https://www.zerostatic.io/">www.zerostatic.io</a></li>
+      </ul>
+
+      <h4 class="mt-4">Image Credits</h4>
+      <table class="table table-sm opening-hours-table">
+	<tr>
+	  <td>Artist/Site</td>
+	  <td></td>
+	  <td>Original 
+        	Link (slow)</td>
+	  <td></td>
+	  <td>Local Usage (cropped)</td>
+	</tr>
+      </table>
+      <table class="table table-sm opening-hours-table">
+        {{ range .Site.Data.contact.images }}
+        <tr>
+          <td class="artist font-weight-bold">{{ .artist }}</td>
+          <td class="hlink"><a href="{{ .hlink }}">{{ .imgdesc }}</a> </td>
+          <td>-</td>
+          <td class="icon"><img src="/{{ .icon }}"/></td>
+        </tr>
+        {{ end }}
+      </table>
+    </div>
+  </div>
+</div>
+{{ end }}
